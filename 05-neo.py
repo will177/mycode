@@ -25,8 +25,12 @@ def main():
     # Parse json - 
     #pprint.pprint(asteroidz["near_earth_objects"])
     for bigrock in asteroidz["near_earth_objects"]:
-        print(bigrock)
-        print()
+        if bigrock["is_potentially_hazardous_asteroid"]:
+            print("Name - ", bigrock["name"])
+            print("Proximity - ", bigrock["close_approach_data"])
+            print("Size - ", bigrock["estimated_diameter"], end ="\n************\n")
+        #else:
+            #print("this asteroid is not one to concern yourself with")
 
     # pull json off response
 
