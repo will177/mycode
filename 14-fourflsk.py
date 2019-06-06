@@ -11,5 +11,8 @@ def index():
 @app.route("/<username>")
 def usertemp(username):
     return render_template("helloname.html", name = username)
+@app.route("/scoretest/<int:score>")
+def score(score):
+    return render_template("highscore.html", marks = score)
 if __name__ == "__main__":
     app.run(port=5006)
